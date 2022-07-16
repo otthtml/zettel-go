@@ -1,4 +1,4 @@
-package deck
+package main
 
 import (
 	"os"
@@ -21,16 +21,16 @@ func TestNewDec(t *testing.T) {
 }
 
 func TestNewDeckFromFile(t *testing.T) {
-	os.Remove("../my_cards.txt")
+	os.Remove("./my_cards.txt")
 
 	d := NewDeck()
-	d.SaveToFile("../my_cards.txt")
+	d.SaveToFile("./my_cards.txt")
 
-	nd := NewDeckFromFile("../my_cards.txt")
+	nd := NewDeckFromFile("./my_cards.txt")
 
 	if len(nd) != 16 {
 		t.Errorf("Expected 16 cards, but got %v", len(nd))
 	}
 
-	os.Remove("../my_cards.txt")
+	os.Remove("./my_cards.txt")
 }
