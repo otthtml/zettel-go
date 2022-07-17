@@ -24,7 +24,10 @@ func main() {
 	}
 
 	(&jim).updateName("Jimmy")
-	jim.print()
+	p := &jim
+	fmt.Println(p)
+	fmt.Println(&p)
+	// jim.print()
 }
 
 func (p *person) updateName(newName string) {
